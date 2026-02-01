@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Avnish
+ *
+ */
+module DesignPattern {
+}
