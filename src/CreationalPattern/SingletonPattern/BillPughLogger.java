@@ -1,4 +1,5 @@
 package CreationalPattern.SingletonPattern;
+import java.util.*;
 
 /*
   @author Avnish
@@ -15,11 +16,9 @@ public class BillPughLogger {
 
     }
 
-
     public static BillPughLogger getInstance() {
         return Holder.INSTANCE;
     }
-
 
     public void log(String message) {
         System.out.println("[LOG] " + message);
