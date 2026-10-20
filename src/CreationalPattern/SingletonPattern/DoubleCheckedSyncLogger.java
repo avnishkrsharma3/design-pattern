@@ -6,8 +6,8 @@ package CreationalPattern.SingletonPattern;
  */
 public class DoubleCheckedSyncLogger {
     private DoubleCheckedSyncLogger(){};
-    private static DoubleCheckedSyncLogger instance;
-    public  static DoubleCheckedSyncLogger getInstance(){
+    private volatile static DoubleCheckedSyncLogger instance;
+    public  static  DoubleCheckedSyncLogger getInstance(){
         if(instance == null){ // don't lock the class for each getInstance call (just an improvement )
             // suppost two thread came at line 11 at once
             // one will get lock but other will wait and know that instance is null

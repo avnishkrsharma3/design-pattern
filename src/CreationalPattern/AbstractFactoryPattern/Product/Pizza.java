@@ -1,18 +1,21 @@
 package CreationalPattern.AbstractFactoryPattern.Product;
+
 import CreationalPattern.AbstractFactoryPattern.Factory.PizzaIngredientFactory;
-import CreationalPattern.SingletonPattern.*;
+import CreationalPattern.SingletonPattern.DoubleCheckedSyncLogger;
 
 /**
  * @author Avnish
  * @date 20-10-2026
  */
 public abstract class Pizza {
-    private final DoubleCheckedSyncLogger logger = DoubleCheckedSyncLogger.getInstance();
+
+    protected final DoubleCheckedSyncLogger logger = DoubleCheckedSyncLogger.getInstance();
+
     protected final PizzaIngredientFactory ingredientFactory;
 
     private  final String name;
 
-    public Pizza(String name, PizzaIngredientFactory ingredientFactory) {
+    protected Pizza(String name, PizzaIngredientFactory ingredientFactory) {
         this.name = name;
         this.ingredientFactory = ingredientFactory;
     }
