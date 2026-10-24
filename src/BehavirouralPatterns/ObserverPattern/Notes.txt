@@ -1,0 +1,29 @@
+# Observer Pattern
+
+## Definition
+The Observer Pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+## Mental Model
+- **Think of it as**: A newspaper subscription - publisher (Subject) notifies all subscribers (Observers) when new edition is available
+- **Problem it solves**: Loose coupling between objects that need to stay in sync
+- **When to use**: When changes to one object require changing others, and you don't know how many objects need to be changed
+
+## Key Components
+- **Subject (Observable)**: Knows its observers, provides methods to attach/detach/notify
+- **Observer**: Interface for objects that need to be notified
+- **Concrete Subject**: Stores state of interest, notifies observers when state changes
+- **Concrete Observer**: Implements Observer, updates itself when notified
+
+## Types
+- **Push Model**: Subject sends detailed data to observers
+- **Pull Model**: Subject notifies, observers pull data they need
+
+## In This Implementation
+- `subject` (Subject interface)
+- `WeatherStation` (Concrete Subject)
+- `observer` (Observer interface)
+- `DisplayDevice`, `MobileDevice` (Concrete Observers)
+- `ObserverPatternExample` - Main/demo
+
+## Quick Reminder
+"Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically."

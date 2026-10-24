@@ -1,0 +1,28 @@
+# Factory Method Pattern
+
+## Definition
+The Factory Method defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+
+## Mental Model
+- **Think of it as**: A franchise model - the general process is defined by the parent, but each branch decides what specific product to make
+- **Problem it solves**: Decouples client code from concrete product classes; follows "Open/Closed Principle"
+- **When to use**: When a class can't anticipate the class of objects it must create
+
+## Key Components
+- **Product**: Interface for objects the factory method creates
+- **Concrete Product**: Implementations of Product
+- **Creator**: Abstract class declaring the factory method; may also provide default implementation
+- **Concrete Creator**: Overrides factory method to return specific Concrete Product
+
+## Difference from Simple Factory
+- Simple Factory: One factory class does all creation
+- Factory Method: Uses inheritance - subclasses decide what to create
+
+## In This Implementation
+- `Pizza` (Product)
+- `NYStyleCheesePizza`, `ChicagoStyleCheesePizza`, etc. (Concrete Products)
+- `PizzaStore` (Creator with factory method)
+- `NYPizzaStore`, `ChicagoPizzaStore` (Concrete Creators)
+
+## Quick Reminder
+"Define an interface for creating an object, but let subclasses decide which class to instantiate. Defer instantiation to subclasses."

@@ -1,0 +1,30 @@
+# Singleton Pattern
+
+## Definition
+The Singleton Pattern ensures a class has only one instance and provides a global point of access to it.
+
+## Mental Model
+- **Think of it as**: A single shared resource - like a government or a printer spooler that the whole system uses
+- **Problem it solves**: Controlled access to a single instance (shared resource, configuration, logging)
+- **When to use**: When exactly one object is needed to coordinate actions across the system
+
+## Key Components
+- **Singleton Class**: Has private constructor, holds static instance, provides static access method
+- **Thread Safety**: Considerations for multi-threaded environments
+
+## Common Implementations
+- **Eager Initialization**: Create instance at class loading time (simple, thread-safe)
+- **Lazy Initialization (Synchronized)**: Create on first use with synchronized method
+- **Double-Checked Locking**: Efficient lazy initialization with volatile
+- **Bill Pugh (Inner Static Helper)**: Elegant, thread-safe, lazy-loaded without synchronization overhead
+- **Enum Singleton**: Most robust, prevents reflection/serialization issues
+
+## In This Implementation
+- `EagerLogger` - Eager initialization
+- `SyncLogger` - Synchronized lazy initialization  
+- `DoubleCheckedSyncLogger` - Double-checked locking
+- `BillPughLogger` - Bill Pugh singleton
+- `Main` - Demonstrates usage
+
+## Quick Reminder
+"Ensure a class only has one instance, and provide a global point of access to it."

@@ -1,0 +1,27 @@
+# Builder Pattern
+
+## Definition
+The Builder Pattern separates the construction of a complex object from its representation so that the same construction process can create different representations.
+
+## Mental Model
+- **Think of it as**: Building a custom burger/order step by step - you specify what you want, builder assembles it
+- **Problem it solves**: Avoiding telescoping constructors with many optional parameters; creating immutable objects with readable code
+- **When to use**: When constructing complex objects with many parameters (some optional)
+
+## Key Components
+- **Product**: The complex object being built
+- **Builder**: Interface specifying methods to build parts
+- **Concrete Builder**: Implements Builder, constructs and assembles parts, provides way to retrieve product
+- **Director** (optional): Constructs object using Builder interface
+- **Client**: Uses Builder to construct objects
+
+## Variations
+- **Fluent Builder**: Methods return `this` for method chaining
+- **Static Inner Builder**: Common Java pattern (like in `StringBuilder`, Lombok `@Builder`)
+
+## In This Implementation
+- `PaymentRequest` - Complex product with many fields, uses static inner Builder
+- `Main` - Shows fluent builder usage with method chaining
+
+## Quick Reminder
+"Separate the construction of a complex object from its representation. Build step by step with readable, fluent API."

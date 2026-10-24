@@ -8,6 +8,6 @@ import java.math.BigDecimal;
  */
 public class BasicPaymentProcessor implements PaymentProcessor {
     public void pay(BigDecimal amount) {
-        System.out.println("Basic Payment Processor is making payment.");
+        System.out.println("Basic Payment Processor is making payment of " + amount);
     }
 }

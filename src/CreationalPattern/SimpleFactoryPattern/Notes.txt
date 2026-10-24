@@ -1,0 +1,23 @@
+# Simple Factory Pattern
+
+## Definition
+The Simple Factory Pattern creates objects without exposing the instantiation logic to the client. Instead of using `new` directly, the client uses a factory class/method to create objects based on parameters. It's not a formal GoF pattern but a common programming idiom.
+
+## Mental Model
+- **Think of it as**: A centralized object creator (like a pizza ordering counter)
+- **Problem it solves**: Avoid tight coupling between client and concrete classes
+- **When to use**: When you have a small set of related objects and creation logic is simple
+
+## Key Components
+- **Product (Interface/Abstract Class)**: Common interface for all objects created
+- **Concrete Products**: Specific implementations
+- **Simple Factory**: Has a method that returns appropriate concrete product based on input
+
+## In This Implementation
+- `Pizza` (Product) - interface/abstract class
+- `CheesePizza`, `ClamPizza`, `PeppperonPizza`, `VeggiePizza` (Concrete Products)
+- `SimplePizzaFactory` - creates pizzas based on `PizzaType`
+- `Main` - client using the factory
+
+## Quick Reminder
+"Encapsulate object creation in one place. Client says 'I want X' and factory gives it."

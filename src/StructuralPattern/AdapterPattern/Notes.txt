@@ -1,0 +1,28 @@
+# Adapter Pattern
+
+## Definition
+The Adapter Pattern allows incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces by wrapping an instance of one class with an adapter that makes it compatible with another interface.
+
+## Mental Model
+- **Think of it as**: A power plug adapter - you have a US plug but Indian socket, adapter makes them compatible
+- **Problem it solves**: Integrating legacy/existing code with new interfaces without modifying existing code
+- **When to use**: When you want to use an existing class but its interface doesn't match what you need
+
+## Types
+- **Class Adapter**: Uses inheritance (extends adaptee, implements target) - multiple inheritance needed
+- **Object Adapter**: Uses composition (holds adaptee as field) - more flexible, preferred in Java
+
+## Key Components
+- **Target**: The interface the client expects to use
+- **Adaptee**: The existing class with incompatible interface
+- **Adapter**: Implements Target, holds/wraps Adaptee, translates calls
+- **Client**: Works with Target interface
+
+## In This Implementation (Object Adapter)
+- `PaymentProcessor` (Target) - expects `pay(BigDecimal amount)`
+- `LegacyPaymentSystem` (Adaptee) - has `makePayment(String amountInPaise)`, cannot be modified
+- `LegacyPaymentAdapter` (Adapter) - converts rupees to paise, calls legacy system
+- `Main` - client uses adapter through target interface
+
+## Quick Reminder
+"Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces."

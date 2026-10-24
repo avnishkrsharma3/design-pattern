@@ -1,0 +1,28 @@
+# Memento Pattern
+
+## Definition
+The Memento Pattern captures and externalizes an object's internal state without violating encapsulation, so that the object can be restored to this state later.
+
+## Mental Model
+- **Think of it as**: Undo/Redo functionality - like text editor save points or game save states
+- **Problem it solves**: Implementing undo without exposing object's internal structure
+- **When to use**: When you need to save and restore previous state of an object
+
+## Key Components
+- **Originator**: The object whose state needs to be saved/restored
+- **Memento**: Stores internal state of Originator; narrow/wide interface
+- **Caretaker**: Responsible for keeping mementos, never operates on or examines memento contents
+
+## Principles
+- Preserves encapsulation (only Originator can access Memento)
+- Provides undo/rollback capability
+- Caretaker manages history without knowing internals
+
+## In This Implementation
+- `TextEditor` (Originator) - has state (text), can create memento and restore from it
+- `EditorMemento` (Memento) - stores the saved state
+- `CareTaker` (Caretaker) - manages history/list of mementos
+- `TextEditorMain` - Demonstrates save/restore/undo functionality
+
+## Quick Reminder
+"Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later."

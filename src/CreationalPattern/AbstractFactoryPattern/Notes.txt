@@ -1,0 +1,29 @@
+# Abstract Factory Pattern
+
+## Definition
+The Abstract Factory Pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+## Mental Model
+- **Think of it as**: A factory of factories - like a kitchen that can produce a whole meal (dough, sauce, cheese) for different regional styles
+- **Problem it solves**: Creating families of related products that must be used together
+- **When to use**: When your system needs to be independent of how its products are created, composed, and represented, and need to enforce products from the same family
+
+## Key Components
+- **Abstract Factory**: Interface for creating abstract product family
+- **Concrete Factory**: Implements creation of concrete products for a specific family/variant
+- **Abstract Product**: Interface for a type of product
+- **Concrete Product**: Implementation belonging to a specific family
+- **Client**: Uses only interfaces from AbstractFactory and AbstractProduct
+
+## Difference from Factory Method
+- Factory Method: Creates ONE product via inheritance
+- Abstract Factory: Creates FAMILY of related products via composition
+
+## In This Implementation
+- `PizzaIngredientFactory` (Abstract Factory)
+- `NYPizzaIngredientFactory`, `ChicagoPizzaIngredientFactory` (Concrete Factories)
+- `Dough`, `Sauce` (Abstract Products) with `NYDough`, `ChicagoDough`, `NYSauce`, `ChicagoSauce` (Concrete Products)
+- Used by `Pizza` to create consistent regional ingredient families
+
+## Quick Reminder
+"Provide an interface for creating families of related or dependent objects without specifying their concrete classes. Factory of factories."

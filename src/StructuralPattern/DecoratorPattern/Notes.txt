@@ -1,0 +1,30 @@
+# Decorator Pattern
+
+## Definition
+The Decorator Pattern attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
+
+## Mental Model
+- **Think of it as**: Decorating a pizza or coffee - you start with base and add toppings/extras dynamically
+- **Problem it solves**: Adding behavior without modifying existing code or creating explosion of subclasses
+- **When to use**: When you need to add responsibilities to objects dynamically and transparently
+
+## Key Components
+- **Component**: Interface common to both concrete component and decorators
+- **Concrete Component**: Original object to which additional responsibilities can be attached
+- **Decorator (Base)**: Abstract class implementing Component, has reference to wrapped Component
+- **Concrete Decorators**: Add specific behavior before/after delegating to wrapped component
+
+## Important Principle
+- Decorators have the same interface as the objects they decorate
+- They can wrap not just the original object, but other decorators
+- Follows Open/Closed Principle - open for extension, closed for modification
+
+## In This Implementation
+- `PaymentProcessor` (Component)
+- `BasicPaymentProcessor` (Concrete Component)
+- `PaymentProcessorDecorator` (Base Decorator)
+- `LoggingDecorator`, `MetricDecorator` (Concrete Decorators)
+- `Main` - Shows stacked decorators
+
+## Quick Reminder
+"Attach additional responsibilities to an object dynamically. Provide a flexible alternative to subclassing for extending functionality."

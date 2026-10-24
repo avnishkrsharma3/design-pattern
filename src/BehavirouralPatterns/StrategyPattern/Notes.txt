@@ -1,0 +1,28 @@
+# Strategy Pattern
+
+## Definition
+The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+## Mental Model
+- **Think of it as**: Different ways to pay - you can use Credit Card, Debit Card, or UPI. The payment method is interchangeable
+- **Problem it solves**: Avoiding if-else/switch statements for different algorithms; allows runtime algorithm selection
+- **When to use**: When you have multiple ways to do the same thing and want to choose behavior at runtime
+
+## Key Components
+- **Strategy Interface**: Common interface for all supported algorithms
+- **Concrete Strategies**: Implementations of different algorithms/behaviors
+- **Context**: Holds a reference to Strategy, uses it to execute algorithm
+
+## Principles
+- Follows Open/Closed Principle
+- Favor composition over inheritance
+- Encapsulate what varies
+
+## In This Implementation
+- `paymentStrategy` (Strategy) - interface with payment method
+- `CreditCard`, `DebitCard`, `UPI` (Concrete Strategies)
+- `PaymentServiceClass` / `paymentService` (Context)
+- `StrategyPattern` - Main/demo
+
+## Quick Reminder
+"Define a family of algorithms, encapsulate each one, and make them interchangeable. Let the algorithm vary independently from clients that use it."
