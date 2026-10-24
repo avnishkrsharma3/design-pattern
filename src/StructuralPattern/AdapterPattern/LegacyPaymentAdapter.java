@@ -12,6 +12,7 @@ public class LegacyPaymentAdapter implements PaymentProcessor {
     private final LegacyPaymentSystem legacyPaymentSystem;
 
 
+
     public LegacyPaymentAdapter(LegacyPaymentSystem legacyPaymentSystem) {
        // store the dependency
         this.legacyPaymentSystem = legacyPaymentSystem;

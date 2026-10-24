@@ -9,8 +9,11 @@ import java.math.BigDecimal;
 public class Main {
     public static void main(String[] args) {
         LegacyPaymentSystem legacyPaymentSystem = new LegacyPaymentSystem();
-        LegacyPaymentAdapter legacyPaymentAdapter = new LegacyPaymentAdapter(legacyPaymentSystem);
+        PaymentProcessor legacyPaymentAdapter = new LegacyPaymentAdapter(legacyPaymentSystem);
+        PaymentProcessor modernPaymentProcessor = new ModernPaymentProcessor();
         BigDecimal amount = new BigDecimal(100);
         legacyPaymentAdapter.pay(amount);
+        BigDecimal amount2= new BigDecimal(new String("100.124"));
+        modernPaymentProcessor.pay(amount2);
     }
 }
