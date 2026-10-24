@@ -1,6 +1,7 @@
 package StructuralPattern.AdapterPattern;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * @author Avnish
@@ -21,8 +22,11 @@ public class LegacyPaymentAdapter implements PaymentProcessor {
         // Hint 1: Convert rupees to paise.
         // Hint 2: Convert the result to a String.
         // Hint 3: Call the legacy system's method.
-        amount = amount.multiply(new BigDecimal(100));
-        String amountString = amount.toPlainString();
+        BigDecimal amountPaise = amount
+                .movePointRight(2)
+                .setScale(0, RoundingMode.UNNECESSARY);
+
+        String amountString = amountPaise.toPlainString();
         this.legacyPaymentSystem.makePayment(amountString);
     }
 }
